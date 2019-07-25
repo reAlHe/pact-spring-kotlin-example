@@ -1,0 +1,54 @@
+{
+  "provider": {
+    "name": "Service-B-provider"
+  },
+  "consumer": {
+    "name": "Service-A-consumer"
+  },
+  "interactions": [
+    {
+      "description": "a request to fetch the product details",
+      "request": {
+        "method": "GET",
+        "path": "/productDetails/1"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset\u003dUTF-8"
+        },
+        "body": {
+          "price": 4.99,
+          "name": "Awesome product no 1",
+          "id": 1
+        },
+        "matchingRules": {
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset\u003d[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "provider has product details for requested product"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.6.12"
+    }
+  }
+}
