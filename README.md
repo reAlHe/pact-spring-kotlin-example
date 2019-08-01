@@ -20,3 +20,11 @@ the `/productDetails/{id}` endpoint.
 A `docker-compose.yml` is provided containing the required infrastructure services, i.e. a pact-broker, that manages
 the contracts and a mongo db acting as storage for the 2 microservices.
 
+## pacts
+After running teh consumer tests, a pact is generated, located under root with path `/target/pacts`. This pact can
+be posted at the pact broker:
+
+`POST http://{pact broker host}/pacts/provider/{provider name}/consumer/{consumer name}/version/{version}`
+
+Please note that the consumer and provider names, provided in the path must match exactly the names within the posted pact json.
+
