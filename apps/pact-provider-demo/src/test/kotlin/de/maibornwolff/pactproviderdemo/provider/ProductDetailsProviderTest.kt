@@ -3,18 +3,15 @@ package de.maibornwolff.pactproviderdemo.provider
 import au.com.dius.pact.provider.junit.Provider
 import au.com.dius.pact.provider.junit.State
 import au.com.dius.pact.provider.junit.loader.PactBroker
+import au.com.dius.pact.provider.junit.target.TestTarget
 import au.com.dius.pact.provider.spring.SpringRestPactRunner
+import au.com.dius.pact.provider.spring.target.SpringBootHttpTarget
 import de.maibornwolff.pactproviderdemo.entity.ProductDetails
 import de.maibornwolff.pactproviderdemo.entity.ProductDetailsRepository
-import org.junit.jupiter.api.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.web.servlet.MockMvc
-import au.com.dius.pact.provider.junit.target.HttpTarget
-import au.com.dius.pact.provider.junit.target.TestTarget
-import au.com.dius.pact.provider.spring.target.SpringBootHttpTarget
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

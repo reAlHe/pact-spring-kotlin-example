@@ -27,12 +27,14 @@ repositories {
 extra["springCloudVersion"] = "Hoxton.M1"
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-amqp")
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("com.fasterxml.jackson.module", "jackson-module-kotlin", "2.9.10")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("au.com.dius", "pact-jvm-consumer-junit5_2.12", "3.6.12")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
